@@ -1350,12 +1350,8 @@ _main	PROC						; COMDAT
 	mov	ecx, OFFSET __6B0A51D4_main@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 
-<<<<<<< HEAD
 ; 6    : 	// just io operation and so.....
 ; 7    : 	cout << "test" << endl;
-=======
-; 6    : 	cout << "test" << endl;
->>>>>>> origin/master
 
 	push	OFFSET ??_C@_04CEJDCDCH@test@
 	mov	eax, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
@@ -1370,19 +1366,11 @@ _main	PROC						; COMDAT
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-<<<<<<< HEAD
 ; 8    : 	return 0;
 
 	xor	eax, eax
 
 ; 9    : }
-=======
-; 7    : 	return 0;
-
-	xor	eax, eax
-
-; 8    : }
->>>>>>> origin/master
 
 	pop	edi
 	pop	esi

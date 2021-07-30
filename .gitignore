@@ -1,6 +1,9 @@
 # My Settings
 .vs/*
 !.gitignore
+Debug/*
+!Debug/*.asm
+
 
 # Prerequisites
 *.d

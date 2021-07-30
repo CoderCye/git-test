@@ -50,6 +50,7 @@ __512D50DA_xlocale DB 01H
 __6FA2B202_xiosbase DB 01H
 __CFAA36CD_xlocnum DB 01H
 __F983EFFB_ios DB 01H
+__ABD10802_conio@h DB 01H
 __6B0A51D4_main@cpp DB 01H
 __21EDBF24_istream DB 01H
 __423D8A1E_ostream DB 01H
@@ -92,6 +93,7 @@ EXTRN	__imp_?_Osfx@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEXXZ:PROC
 EXTRN	__imp_??6?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV01@P6AAAV01@AAV01@@Z@Z:PROC
 EXTRN	__imp_?put@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@D@Z:PROC
 EXTRN	__imp_?flush@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAEAAV12@XZ:PROC
+EXTRN	__imp___getch:PROC
 EXTRN	@_RTC_CheckStackVars@8:PROC
 EXTRN	@__CheckForDebuggerJustMyCode@4:PROC
 EXTRN	@__security_check_cookie@4:PROC
@@ -1335,7 +1337,7 @@ _TEXT	SEGMENT
 tv71 = -196						; size = 4
 _main	PROC						; COMDAT
 
-; 5    : {
+; 6    : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1350,8 +1352,8 @@ _main	PROC						; COMDAT
 	mov	ecx, OFFSET __6B0A51D4_main@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 
-; 6    : 	// just io operation and so.....
-; 7    : 	cout << "test" << endl;
+; 7    : 	// just io operation and so.....
+; 8    : 	cout << "test" << endl;
 
 	push	OFFSET ??_C@_04CEJDCDCH@test@
 	mov	eax, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
@@ -1366,11 +1368,19 @@ _main	PROC						; COMDAT
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 8    : 	return 0;
+; 9    : 
+; 10   : 	_getch();
+
+	mov	esi, esp
+	call	DWORD PTR __imp___getch
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 11   : 	return 0;
 
 	xor	eax, eax
 
-; 9    : }
+; 12   : }
 
 	pop	edi
 	pop	esi

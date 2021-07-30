@@ -1352,8 +1352,9 @@ _main	PROC						; COMDAT
 	mov	ecx, OFFSET __6B0A51D4_main@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 
-; 7    : 	// just io operation and so.....
-; 8    : 	cout << "test" << endl;
+; 7    : 	// just io operation and so..... and yeah
+; 8    : 	// testing commit git log
+; 9    : 	cout << "test" << endl;
 
 	push	OFFSET ??_C@_04CEJDCDCH@test@
 	mov	eax, DWORD PTR __imp_?cout@std@@3V?$basic_ostream@DU?$char_traits@D@std@@@1@A
@@ -1368,19 +1369,20 @@ _main	PROC						; COMDAT
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 9    : 
-; 10   : 	_getch();
+; 10   : 
+; 11   : 	// and just test tags work
+; 12   : 	_getch();
 
 	mov	esi, esp
 	call	DWORD PTR __imp___getch
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 11   : 	return 0;
+; 13   : 	return 0;
 
 	xor	eax, eax
 
-; 12   : }
+; 14   : }
 
 	pop	edi
 	pop	esi

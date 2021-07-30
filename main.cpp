@@ -8,6 +8,7 @@ int main()
 	// testing commit git log
 	cout << "test" << endl;
 
+	// and just test tags work
 	_getch();
 	return 0;
 }
